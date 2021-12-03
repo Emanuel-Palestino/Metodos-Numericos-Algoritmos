@@ -5,9 +5,7 @@ from math import *
 numEcuaciones = 3
 
 ## Vector columna inicial
-vectorColumna = []
-for i in range(numEcuaciones):
-	vectorColumna.append(0.1)
+vectorColumna = [0.1, 0.1, -0.1]
 
 def newthonRaphson(vector, ecuaciones, tolerancia, ii):
 
