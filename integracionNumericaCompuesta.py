@@ -62,9 +62,9 @@ def funcion3(x):
 print("Integracion Regla Compuesta del Trapecio\n")
 print("Integral 1", reglaCompuestaTrapecio(funcion1, 0, 5, 1000))
 print("Integral 2", reglaCompuestaTrapecio(funcion2, 0, 1, 1000))
-print("Integral 2", reglaCompuestaTrapecio(funcion2, -5, 5, 1000))
+print("Integral 2", reglaCompuestaTrapecio(funcion3, -5, 5, 1000))
 
 print("Integracion Regla Compuesta de Simpson\n")
 print("Integral 1", reglaCompuestaSimpson(funcion1, 0, 5, 1000))
 print("Integral 2", reglaCompuestaSimpson(funcion2, 0, 1, 1000))
-print("Integral 2", reglaCompuestaSimpson(funcion2, -5, 5, 1000))
+print("Integral 2", reglaCompuestaSimpson(funcion3, -5, 5, 1000))
