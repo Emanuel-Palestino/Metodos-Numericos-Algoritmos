@@ -1,0 +1,41 @@
+import numpy as np
+from math import *
+
+# Funcion Trapecio
+def reglaCompuestaTrapecio(func, a, b, n):
+	h = (b - a) / n
+	res = 0
+	# f(a)
+	res = func(a)
+	# Sumatoria
+	suma = 0
+	for i in range(1, n + 1):
+		# sum(f(xi))
+		suma += func(a + i * h)
+	# 2*sum(f(xi))
+	suma *= 2
+	# f(b)
+	res += suma + func(b)
+	# h / 2
+	res *= h / 2
+	return res
+
+# Funcion Simpson
+def reglaCompuestaSimpson(func, a, b, n):
+	h = (b - a) / n
+	res = 0
+	# f(x0)
+	res = func()
+
+
+# Funciones de prueba
+def funcion1(x):
+	return (x + 1) ** -1
+
+def funcion2(x):
+	return sqrt(1 + x ** 2)
+
+# Prueba
+print("Integracion Regla Compuesta del Trapecio\n")
+print("Integral 1", reglaCompuestaTrapecio(funcion1, 0, 2, 1000))
+print("Integral 2", reglaCompuestaTrapecio(funcion2, 0, 2, 1000))
