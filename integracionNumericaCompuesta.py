@@ -50,12 +50,19 @@ def reglaCompuestaSimpson(func, a, b, n):
 
 # Funciones de prueba
 def funcion1(x):
-	return (x + 1) ** -1
+	return 
 
 def funcion2(x):
 	return sqrt(1 + x ** 2)
 
+def funcion3(x):
+	return 1
+
 # Prueba
 print("Integracion Regla Compuesta del Trapecio\n")
+print("Integral 1", reglaCompuestaTrapecio(funcion1, 0, 2, 1000))
+print("Integral 2", reglaCompuestaTrapecio(funcion2, 0, 2, 1000))
+
+print("Integracion Regla Compuesta de Simpson\n")
 print("Integral 1", reglaCompuestaTrapecio(funcion1, 0, 2, 1000))
 print("Integral 2", reglaCompuestaTrapecio(funcion2, 0, 2, 1000))
