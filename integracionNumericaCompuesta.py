@@ -25,7 +25,27 @@ def reglaCompuestaSimpson(func, a, b, n):
 	h = (b - a) / n
 	res = 0
 	# f(x0)
-	res = func()
+	res = func(a)
+
+	# Primer sumatoria
+	suma = 0
+	for i in range(n/2):
+		suma += func((a + (2 * i + 1) * h))
+	# 4 sum(f(2i + 1))
+	suma *= 4
+	res += suma
+
+	# Segunda sumatoria
+	suma = 0
+	for i in range(n/2):
+		suma += func(a + (2 * i) * h)
+	
+	# sum 2sum(f(x2i))
+	suma *= 2
+	res += suma + func(b)
+
+	res *= h / 3
+	return res
 
 
 # Funciones de prueba
