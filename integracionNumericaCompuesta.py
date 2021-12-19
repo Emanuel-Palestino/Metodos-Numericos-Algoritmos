@@ -9,7 +9,7 @@ def reglaCompuestaTrapecio(func, a, b, n):
 	res = func(a)
 	# Sumatoria
 	suma = 0
-	for i in range(1, n + 1):
+	for i in range(1, n):
 		# sum(f(xi))
 		suma += func(a + i * h)
 	# 2*sum(f(xi))
@@ -29,7 +29,7 @@ def reglaCompuestaSimpson(func, a, b, n):
 
 	# Primer sumatoria
 	suma = 0
-	for i in range(n/2):
+	for i in range(int(n/2)):
 		suma += func((a + (2 * i + 1) * h))
 	# 4 sum(f(2i + 1))
 	suma *= 4
@@ -37,7 +37,7 @@ def reglaCompuestaSimpson(func, a, b, n):
 
 	# Segunda sumatoria
 	suma = 0
-	for i in range(n/2):
+	for i in range(1, int(n/2)):
 		suma += func(a + (2 * i) * h)
 	
 	# sum 2sum(f(x2i))
@@ -59,12 +59,14 @@ def funcion3(x):
 	return x
 
 # Prueba
-print("Integracion Regla Compuesta del Trapecio\n")
-print("Integral 1", reglaCompuestaTrapecio(funcion1, 0, 5, 1000))
-print("Integral 2", reglaCompuestaTrapecio(funcion2, 0, 1, 1000))
-print("Integral 2", reglaCompuestaTrapecio(funcion3, -5, 5, 1000))
+print("Integracion Regla Compuesta del Trapecio:")
+print("Integral 1:", reglaCompuestaTrapecio(funcion1, 0, 5, 1000))
+print("Integral 2:", reglaCompuestaTrapecio(funcion2, 0, 1, 1000))
+print("Integral 3:", reglaCompuestaTrapecio(funcion3, -5, 5, 1000))
+print("\n")
 
-print("Integracion Regla Compuesta de Simpson\n")
-print("Integral 1", reglaCompuestaSimpson(funcion1, 0, 5, 1000))
-print("Integral 2", reglaCompuestaSimpson(funcion2, 0, 1, 1000))
-print("Integral 2", reglaCompuestaSimpson(funcion3, -5, 5, 1000))
+print("Integracion Regla Compuesta de Simpson:")
+print("Integral 1:", reglaCompuestaSimpson(funcion1, 0, 5, 1000))
+print("Integral 2:", reglaCompuestaSimpson(funcion2, 0, 1, 1000))
+print("Integral 3:", reglaCompuestaSimpson(funcion3, -5, 5, 1000))
+print("\n")
